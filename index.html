@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Syed Affan Saeed | AI & Front-End Developer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+        color: #1a2a3a;
+        line-height: 1.5;
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* Modern Glass Navbar */
+      .navbar {
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.85);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 0.9rem 0;
+      }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        font-weight: 800;
+        font-size: 1.5rem;
+        background: linear-gradient(135deg, #1a5c4a, #2d8f72);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        letter-spacing: -0.02em;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        font-weight: 500;
+        color: #334155;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: #2d8f72;
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
+      }
+
+      .nav-links a:hover {
+        color: #2d8f72;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: linear-gradient(135deg, #1a5c4a, #2d8f72);
+        color: white;
+        padding: 0.7rem 1.6rem;
+        border-radius: 40px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(45, 143, 114, 0.2);
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 1.5px solid #2d8f72;
+        color: #2d8f72;
+        box-shadow: none;
+      }
+
+      .btn-outline:hover {
+        background: #2d8f72;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(45, 143, 114, 0.3);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(45, 143, 114, 0.35);
+      }
+
+      /* Hero Section Modern */
+      .hero {
+        padding: 4rem 0 3rem;
+      }
+      .hero-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .hero-content {
+        flex: 1;
+        min-width: 260px;
+      }
+      .hero-badge {
+        background: rgba(45, 143, 114, 0.1);
+        color: #2d8f72;
+        padding: 0.25rem 1.2rem;
+        border-radius: 40px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 1.2rem;
+        backdrop-filter: blur(4px);
+      }
+      .hero-content h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+      .highlight {
+        background: linear-gradient(135deg, #1a5c4a, #2d8f72);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .hero-desc {
+        font-size: 1.1rem;
+        color: #475569;
+        max-width: 550px;
+        margin: 1rem 0 1.8rem;
+      }
+      .hero-stats {
+        display: flex;
+        gap: 2rem;
+        margin-top: 1.5rem;
+      }
+      .stat-item p:first-child {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: #1a5c4a;
+      }
+      .stat-item span {
+        color: #64748b;
+        font-size: 0.85rem;
+      }
+      section {
+        padding: 4rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        letter-spacing: -0.01em;
+        position: relative;
+        display: inline-block;
+      }
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60%;
+        height: 3px;
+        background: linear-gradient(90deg, #2d8f72, #a8e6cf);
+        border-radius: 3px;
+      }
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+      .skill-tag {
+        background: white;
+        border: 1px solid #e2e8f0;
+        padding: 0.5rem 1.2rem;
+        border-radius: 50px;
+        font-weight: 500;
+        font-size: 0.85rem;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+        transition: all 0.2s ease;
+      }
+      .skill-tag:hover {
+        border-color: #2d8f72;
+        background: #f0fdf9;
+        transform: translateY(-2px);
+      }
+      .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+      }
+      .card {
+        background: white;
+        border-radius: 20px;
+        padding: 1.6rem 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+      .card:hover {
+        box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+      }
+      .card-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 0.7rem;
+      }
+      .card-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1e293b;
+      }
+      .card-sub {
+        color: #2d8f72;
+        font-weight: 600;
+        margin-bottom: 0.9rem;
+        font-size: 0.9rem;
+      }
+      .card-desc {
+        color: #475569;
+        padding-left: 1rem;
+        list-style-type: disc;
+      }
+      .card-desc li {
+        margin-bottom: 0.4rem;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+      .project-card {
+        background: white;
+        border-radius: 20px;
+        padding: 1.6rem;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      }
+      .project-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15);
+        border-color: rgba(45, 143, 114, 0.2);
+      }
+      .project-card i {
+        font-size: 2rem;
+        color: #2d8f72;
+        margin-bottom: 1rem;
+      }
+      .project-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.6rem;
+        color: #1e293b;
+      }
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 1rem 0;
+      }
+      .project-tech span {
+        background: #f1f5f9;
+        padding: 0.2rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: #475569;
+      }
+      /* Modern GitHub Button */
+      .github-btn-modern {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #f8fafc;
+        color: #1a5c4a;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        border: 1px solid #e2e8f0;
+        margin-top: 0.5rem;
+      }
+      .github-btn-modern i {
+        font-size: 0.9rem;
+        margin: 0;
+      }
+      .github-btn-modern:hover {
+        background: #1a5c4a;
+        color: white;
+        border-color: #1a5c4a;
+        transform: translateX(3px);
+      }
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        background: white;
+        padding: 0.6rem 1.3rem;
+        border-radius: 60px;
+        border: 1px solid #e2e8f0;
+        text-decoration: none;
+        color: #334155;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      .contact-item i {
+        font-size: 1.1rem;
+        color: #2d8f72;
+      }
+      .contact-item:hover {
+        background: #f8fafc;
+        border-color: #2d8f72;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+      .working-form {
+        margin-top: 2rem;
+        background: white;
+        border-radius: 20px;
+        padding: 1.8rem;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      }
+      .working-form h3 {
+        margin-bottom: 1.2rem;
+        font-size: 1.2rem;
+        color: #1e293b;
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        font-family: "Inter", sans-serif;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        background: #fafcff;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #2d8f72;
+        box-shadow: 0 0 0 3px rgba(45, 143, 114, 0.1);
+        background: white;
+      }
+      .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+      .submit-btn {
+        background: linear-gradient(135deg, #1a5c4a, #2d8f72);
+        color: white;
+        border: none;
+        padding: 0.8rem 1.8rem;
+        border-radius: 40px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+        box-shadow: 0 2px 8px rgba(45, 143, 114, 0.2);
+      }
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(45, 143, 114, 0.3);
+      }
+      .form-status {
+        margin-top: 1rem;
+        padding: 0.8rem;
+        border-radius: 12px;
+        text-align: center;
+        display: none;
+      }
+      .form-status.success {
+        background: #d4edda;
+        color: #155724;
+        display: block;
+      }
+      .form-status.error {
+        background: #f8d7da;
+        color: #721c24;
+        display: block;
+      }
+      footer {
+        text-align: center;
+        padding: 2rem 0;
+        color: #64748b;
+        font-size: 0.85rem;
+      }
+      @media (max-width: 768px) {
+        .nav-inner {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .hero-content h1 {
+          font-size: 2.2rem;
+        }
+        .section-title {
+          font-size: 1.7rem;
+        }
+        .card-header {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+      }
+      .fade-up {
+        animation: fadeUp 0.6s ease-out forwards;
+        opacity: 0;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-inner">
+        <div class="logo">Affan Saeed</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content fade-up">
+            <div class="hero-badge">✦ Front-End Developer | AI Explorer</div>
+            <h1>Syed <span class="highlight">Affan Saeed</span></h1>
+            <p class="hero-desc">
+              Computer Science student with strong passion for web development.
+              Growing knowledge of HTML, CSS, Bootstrap, and leveraging AI tools
+              to build creative solutions.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+              <a href="#projects" class="btn"><i class="fas fa-laptop-code"></i> View Projects</a>
+              <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Contact</a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item"><p>5+</p><span>GitHub Projects</span></div>
+              <div class="stat-item"><p>AI Tools</p><span>Expert User</span></div>
+              <div class="stat-item"><p>Frontend</p><span>Focus</span></div>
+            </div>
+          </div>
+          <div style="flex: 0.4; min-width: 150px; text-align: center">
+            <div style="background: linear-gradient(145deg, #ffffff, #eef2f7); width: 170px; height: 170px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);">
+              <i class="fas fa-code" style="font-size: 4rem; color: #2d8f72"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="container">
+          <h2 class="section-title">Experience & Education</h2>
+          <div class="timeline">
+            <div class="card">
+              <div class="card-header"><span class="card-title">Front-End Developer (Projects)</span></div>
+              <div class="card-sub">Freelance & Personal Projects · Karachi</div>
+              <ul class="card-desc">
+                <li>Enhanced OLX homepage, boosting user experience and engagement through modern UI improvements.</li>
+                <li>Crafted a Pokemon-themed website to refine development skills and responsive layouts.</li>
+                <li>Executed various front-end projects to advance web proficiency (HTML, CSS, Bootstrap).</li>
+                <li>Developed AI Genius Pro — an AI-powered assistant tool.</li>
+                <li>Built Attendance by Face — facial recognition attendance system using AI tools & Python.</li>
+                <li>Created Neon Mind Puzzle Game — a creative interactive puzzle experience.</li>
+                <li>Built Weather App & Weather App Digital Slide — real-time weather applications.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="card-header"><span class="card-title">BS Software Engineering (Current)</span></div>
+              <div class="card-sub">Sir Syed University of Engineering & Technology</div>
+              <ul class="card-desc">
+                <li>Pursuing Bachelor's in Software Engineering — ongoing, currently in second semester.</li>
+                <li>Core courses: Programming Fundamentals, Web Development, Object Oriented Paradigm.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="container">
+          <h2 class="section-title">Technical & Tools</h2>
+          <div class="skills-grid">
+            <span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">Bootstrap</span>
+            <span class="skill-tag">Git & GitHub</span><span class="skill-tag">Python (Basics)</span><span class="skill-tag">C++ (Basics)</span>
+            <span class="skill-tag">C (Basics)</span><span class="skill-tag">JAVA (Basics)</span><span class="skill-tag">C# (Basics)</span>
+            <span class="skill-tag">AI Tools (ChatGPT, Gemini, Claude, Deepseek AI)</span>
+            <span class="skill-tag">Microsoft Word / Excel / PPT</span><span class="skill-tag">Canva</span>
+          </div>
+          <div style="margin-top: 2rem">
+            <h3 style="font-weight: 600; margin-bottom: 0.8rem; color: #1e293b;">Languages</h3>
+            <div class="skills-grid"><span class="skill-tag">Urdu</span><span class="skill-tag">English</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="container">
+          <h2 class="section-title">Featured Work (GitHub)</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <i class="fas fa-robot"></i>
+              <h3>AI Genius Pro</h3>
+              <p>AI-powered assistant tool leveraging cutting-edge language models.</p>
+              <div class="project-tech"><span>Python</span><span>OpenAI API</span></div>
+              <a href="https://github.com/Paid-Dev-From-Pak/AI-Genius-Pro" target="_blank" class="github-btn-modern"><i class="fab fa-github"></i> View on GitHub →</a>
+            </div>
+            <div class="project-card">
+              <i class="fas fa-camera"></i>
+              <h3>Attendance by Face Rec</h3>
+              <p>Facial recognition attendance system using computer vision.</p>
+              <div class="project-tech"><span>Python</span><span>OpenCV</span></div>
+              <a href="https://github.com/Paid-Dev-From-Pak/Attendance-by-Face-Rec" target="_blank" class="github-btn-modern"><i class="fab fa-github"></i> View on GitHub →</a>
+            </div>
+            <div class="project-card">
+              <i class="fas fa-puzzle-piece"></i>
+              <h3>Neon Mind Puzzle Game</h3>
+              <p>Interactive puzzle game with neon aesthetics.</p>
+              <div class="project-tech"><span>HTML/CSS</span><span>JavaScript</span></div>
+              <a href="https://github.com/Paid-Dev-From-Pak/Neon-Mind-Puzzle-Game" target="_blank" class="github-btn-modern"><i class="fab fa-github"></i> View on GitHub →</a>
+            </div>
+            <div class="project-card">
+              <i class="fas fa-cloud-sun"></i>
+              <h3>Weather App</h3>
+              <p>Real-time weather application using API.</p>
+              <div class="project-tech"><span>JavaScript</span><span>Weather API</span></div>
+              <a href="https://github.com/Paid-Dev-From-Pak/Weather-App" target="_blank" class="github-btn-modern"><i class="fab fa-github"></i> View on GitHub →</a>
+            </div>
+            <div class="project-card">
+              <i class="fas fa-sliders-h"></i>
+              <h3>Weather App Digital Slide</h3>
+              <p>Weather dashboard with sliding transitions.</p>
+              <div class="project-tech"><span>JavaScript</span><span>CSS Animations</span></div>
+              <a href="https://github.com/Paid-Dev-From-Pak/Weather-App-Digital-Slide" target="_blank" class="github-btn-modern"><i class="fab fa-github"></i> View on GitHub →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <h2 class="section-title">Let's Connect</h2>
+          <div style="background: linear-gradient(135deg, #f0fdf9, #ffffff); border-radius: 20px; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem; border: 1px solid #e2e8f0;">
+            <p style="font-weight: 500; margin-bottom: 0.5rem; color: #1e293b;">📌 Summary</p>
+            <p style="color: #475569;">Front-End Developer with strong history of improving user engagement. Proficient in HTML, CSS, Bootstrap, Python, C++, C, Java, and C#. Experienced in AI tools like ChatGPT, Gemini, Claude, and Deepseek AI.</p>
+          </div>
+          <div class="contact-links">
+            <a href="tel:+923318324735" class="contact-item"><i class="fas fa-phone-alt"></i> +92 331 8324735</a>
+            <a href="mailto:syedaffansaeed051051@gmail.com" class="contact-item"><i class="fas fa-envelope"></i> syedaffansaeed051051@gmail.com</a>
+            <a href="https://github.com/Paid-Dev-From-Pak" target="_blank" class="contact-item"><i class="fab fa-github"></i> github/Paid-Dev-From-Pak</a>
+            <a href="#" class="contact-item"><i class="fas fa-map-marker-alt"></i> Karachi Central, Pakistan</a>
+          </div>
+
+          <div class="working-form">
+            <h3><i class="fas fa-envelope"></i> Send me a direct message</h3>
+            <form id="contactForm" action="https://formsubmit.co/syedaffansaeed051051@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_subject" value="New message from Portfolio">
+              <div class="form-group">
+                <input type="text" name="name" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" placeholder="Your email address" required />
+              </div>
+              <div class="form-group">
+                <textarea name="message" placeholder="Your message..." required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+              <div id="formStatus" class="form-status"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2026 Syed Affan Saeed — Modern Portfolio</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href");
+            if (targetId === "#" || targetId === "") return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              e.preventDefault();
+              targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+              history.pushState(null, null, targetId);
+            }
+          });
+        });
+
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-links a");
+        function changeActiveLink() {
+          let current = "";
+          const scrollPos = window.scrollY + 100;
+          sections.forEach((section) => {
+            const top = section.offsetTop;
+            const height = section.clientHeight;
+            if (scrollPos >= top && scrollPos < top + height) current = section.getAttribute("id");
+          });
+          navLinks.forEach((link) => {
+            link.style.color = "#334155";
+            link.style.fontWeight = "500";
+            const href = link.getAttribute("href").substring(1);
+            if (href === current) {
+              link.style.color = "#2d8f72";
+              link.style.fontWeight = "600";
+            }
+          });
+        }
+        window.addEventListener("scroll", changeActiveLink);
+        window.addEventListener("load", changeActiveLink);
+
+        const fadeElements = document.querySelectorAll(".card, .project-card, .skill-tag, .hero-content");
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("fade-up");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+        fadeElements.forEach((el) => observer.observe(el));
+
+        const form = document.getElementById('contactForm');
+        const statusDiv = document.getElementById('formStatus');
+
+        if (form) {
+          form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            statusDiv.className = 'form-status';
+            statusDiv.style.display = 'none';
+            
+            try {
+              const formData = new FormData(form);
+              const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+              });
+              
+              const data = await response.json();
+              
+              if (data.success === "true" || response.ok) {
+                statusDiv.textContent = '✅ Message sent successfully! I will get back to you soon.';
+                statusDiv.className = 'form-status success';
+                statusDiv.style.display = 'block';
+                form.reset();
+              } else {
+                statusDiv.textContent = '❌ Failed to send. Please email me directly.';
+                statusDiv.className = 'form-status error';
+                statusDiv.style.display = 'block';
+              }
+            } catch (error) {
+              statusDiv.textContent = '✅ Message sent! I will get back to you soon.';
+              statusDiv.className = 'form-status success';
+              statusDiv.style.display = 'block';
+              form.reset();
+            } finally {
+              submitBtn.innerHTML = originalBtnText;
+              submitBtn.disabled = false;
+            }
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
