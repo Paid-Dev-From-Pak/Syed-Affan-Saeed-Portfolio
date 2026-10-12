@@ -434,36 +434,6 @@ footer {
   color: #64748b;
   font-size: 0.85rem;
 }
-@media (max-width: 768px) {
-  .nav-inner {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-  .section-title {
-    font-size: 1.7rem;
-  }
-  .card-header {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-.fade-up {
-  animation: fadeUp 0.6s ease-out forwards;
-  opacity: 0;
-}
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 /* ============================================ */
 /* NEW IMAGES SECTION STYLES (Cards) */
@@ -556,8 +526,18 @@ footer {
     padding: 0.6rem 0;
   }
 
+  /* NAVBAR CENTER FIX (Logo + Links) */
+  .nav-inner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
   .logo {
     font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
   }
 
   .nav-links {
@@ -588,9 +568,22 @@ footer {
     font-size: 0.9rem;
   }
 
+  /* HERO BUTTONS CENTER FIX */
+  .hero-content > div[style*="display: flex"] {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* HERO STATS CENTER FIX */
   .hero-stats {
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .stat-item {
+    text-align: center;
   }
 
   .stat-item p:first-child {
@@ -735,8 +728,10 @@ footer {
     padding: 0.35rem 0.8rem;
   }
 
+  /* SKILLS GRID CENTER FIX */
   .skills-grid {
     gap: 0.5rem;
+    justify-content: center;
   }
 
   footer {
